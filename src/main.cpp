@@ -6,7 +6,6 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <string>
-
 #include "utils/FileUtils.hpp"
 
 using json = nlohmann::json;
