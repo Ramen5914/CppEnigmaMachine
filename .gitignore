@@ -17,3 +17,4 @@ build/
 external/vcpkg/buildtrees/
 external/vcpkg/packages/
 external/vcpkg/installed/
+.cache
