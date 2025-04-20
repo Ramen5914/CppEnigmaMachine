@@ -15,6 +15,7 @@ struct DailyKey {
 };
 
 class Keylist {
+    //
    private:
     std::map<std::string, DailyKey> dailyKeys;
     std::array<std::string, 300> decoyGroups;
