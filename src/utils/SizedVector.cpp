@@ -4,9 +4,9 @@ template <typename T, size_t MinSize, size_t MaxSize>
 SizedVector<T, MinSize, MaxSize>::SizedVector() {
     if (MinSize > MaxSize) {
         throw std::invalid_argument("Minimum size cannot be greater than maximum size.");
-    } else if (MinSize = MaxSize) {
+    } else if (MinSize == MaxSize) {
         throw std::invalid_argument(
-            "Minimum size and maximum size are the same, use std::array instead.")
+            "Minimum size and maximum size are the same, use std::array instead.");
     }
 
     data.reserve(MaxSize);
