@@ -41,6 +41,7 @@ T& SizedVector<T, MinSize, MaxSize>::operator[](size_t index) {
     if (index >= data.size()) {
         throw std::out_of_range("Index out of bounds.");
     }
+
     return data[index];
 }
 
