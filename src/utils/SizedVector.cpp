@@ -5,7 +5,8 @@ SizedVector<T, MinSize, MaxSize>::SizedVector() {
     if (MinSize > MaxSize) {
         throw std::invalid_argument("Minimum size cannot be greater than maximum size.");
     } else if (MinSize = MaxSize) {
-        throw std::invalid_argument("Minimum size and maximum size are the same, use std::array instead.")
+        throw std::invalid_argument(
+            "Minimum size and maximum size are the same, use std::array instead.")
     }
 
     data.reserve(MaxSize);
@@ -66,7 +67,7 @@ void SizedVector<T, MinSize, MaxSize>::resize(size_t newSize) {
     if (newSize < MinSize || newSize > MaxSize) {
         throw std::out_of_range("New size is outside the allowed range.");
     }
-    
+
     data.resize(newSize);
 }
 
