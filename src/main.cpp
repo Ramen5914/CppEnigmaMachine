@@ -16,18 +16,21 @@ int main(int argc, char** argv) {
     CLI::App app{"A feature-rich software implementation of the Enigma Machine."};
 
     // Rotor
-    CLI::App* rotorSubCmd = app.add_subcommand("rotor");
+    CLI::App* rotor = app.add_subcommand("rotor");
 
-    CLI::App* rotorAddSubCmd = rotorSubCmd->add_subcommand("add");
-    std::string rotor_name;
-    rotorAddSubCmd->add_option("name", rotor_name, "Rotor name")->required();
+    std::string rotorName;
+
+    CLI::App* rotorAdd = rotor->add_subcommand("add");
+    rotorAdd->add_option("name", rotorName, "Rotor name")->required();
     int notches = 1;
-    rotorAddSubCmd->add_option("-n,--notches", notches, "Amount of notches on the rotor");
+    rotorAdd->add_option("-n,--notches", notches, "Amount of notches on the rotor");
     int seed;
-    rotorAddSubCmd->add_option("-s,--seed", seed, "Seed to use for generating rotor");
+    rotorAdd->add_option("-s,--seed", seed, "Seed to use for generating rotor");
 
-    CLI::App* rotorRmSubCmd = rotorSubCmd->add_subcommand("rm");
-    CLI::App* rotorListSubCmd = rotorSubCmd->add_subcommand("list");
+    CLI::App* rotorRm = rotor->add_subcommand("rm");
+    rotorRm->add_option("name", rotorName, "Rotor name")->required();
+
+    CLI::App* rotorList = rotor->add_subcommand("list");
 
     // Keylist
     CLI::App* keylistSubCmd = app.add_subcommand("keylist");
